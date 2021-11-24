@@ -22,8 +22,8 @@ Resources
 ---------
 
 - Collection of resources <https://reproducible-builds.org/>
-- Good tips for managing the timestamps <https://wiki.debian.org/ReproducibleBuilds/Howto>
-
+- Good old tips for managing the timestamps <https://wiki.debian.org/ReproducibleBuilds/Howto>
+- Reproducible buildah build examples <https://tensor5.dev/reproducible-container-images/>
 
 Basic tricks
 ------------
@@ -63,4 +63,8 @@ If build time need to be stored, it can be stored as build output metadata.
 Examples
 --------
 
+Simple packaging examples [packages/](packages/)
 
+Docker / Container examples [containers/](containers/)
+
+No compiling examples yet.
