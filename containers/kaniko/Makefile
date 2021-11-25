@@ -1,7 +1,7 @@
 build:
-	# File fixes, maybe not needed in kaniko
+	# File fixes, timestamp not needed with kaniko
 	#touch -d "$$(git log -1 --pretty=format:%ai file.txt)" file.txt
-	#chmod 0644 file.txt
+	chmod 0644 file.txt
 	# Double build
 	docker run --rm -v $$PWD:/workspace \
 	gcr.io/kaniko-project/executor:latest \
