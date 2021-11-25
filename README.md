@@ -15,7 +15,7 @@ Motivation for reproducible builds
 
 - security: reproducible builds can be used to verify builds, as the build result can be checked on another system
 - quality: push for reproducible builds enforce one to design and change the build so that there are no undocumented inputs
-- and it will grind out all undocumented build system dependencies
+- and it will grind out all undocumented build system dependencies and potential errors (like different permissions from different build systems)
 - efficiency: deterministic builds leads to efficiency as single source revisions equals to single output and the output can efficiently cached
 
 Resources
@@ -45,6 +45,7 @@ Resources
 
 - ensure that the order of resources is deterministic
 - fix resource permissions (mask, uid and gid)
+- ensure uniform (unix) line endings
 
 Compiling
 
@@ -60,11 +61,15 @@ Build time does not have any meaning in reproducible builds. If there is a need 
 
 If build time need to be stored, it can be stored as build output metadata.
 
+Reproducibility need to be tested, because it is very easy to break it.
+
 Examples
 --------
 
 Simple packaging examples [packages/](packages/)
 
 Docker / Container examples [containers/](containers/)
+
+- Potential next investigation is to make reproducible build that uses fixed operating system packages
 
 No compiling examples yet.
