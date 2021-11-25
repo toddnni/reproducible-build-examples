@@ -31,5 +31,7 @@ run-in-docker:
 	docker run --rm -it kanikotest
 
 clean:
-	rm -rf digest oci
+	rm -f digest
+	docker run --rm -it -v "$$PWD"/oci:/oci debian:latest /bin/sh -c "rm -rf /oci/*"
+	rmdir oci
 	docker rmi kanikotest
