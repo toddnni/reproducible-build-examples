@@ -27,6 +27,7 @@ build:
 	git diff-index --quiet HEAD -- ../zip-hash.txt || (echo "WARN: hash differs from the saved one!" && false)
 
 run-in-docker:
+	docker run --rm -it -v "$$PWD"/oci:/oci debian:latest /bin/sh -c "chmod -R g+rX,o+rX /oci/"
 	skopeo copy oci:oci docker-daemon:kanikotest:latest
 	docker run --rm -it kanikotest
 
