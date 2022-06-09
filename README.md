@@ -70,6 +70,7 @@ Simple packaging examples [packages/](packages/)
 
 Docker / Container examples [containers/](containers/)
 
+- buildah builds store version number in the labels, not reproducible if buildah version is not fixed. Future buildah version will have `--identity-labels=false`
 - Potential next investigation is to make reproducible build that uses fixed operating system packages
 
 No compiling examples yet.
