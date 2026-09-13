@@ -71,6 +71,23 @@ Simple packaging examples [packages/](packages/)
 Docker / Container examples [containers/](containers/)
 
 - buildah builds store version number in the labels, not reproducible if buildah version is not fixed. Future buildah version will have `--identity-labels=false`
+- kaniko broken also, does not keep the file timestamps. Don't know if related to OCI thing 
 - Potential next investigation is to make reproducible build that uses fixed operating system packages
 
 No compiling examples yet.
+
+How
+---
+
+```
+git clone reproducible-build-examples reproducible-build-examples
+cd reproducible-build-examples
+umask 0077
+make 
+```
+
+Edit file and see that it breaks
+
+Edit buildah file, commit, save hash, revert and see the change
+
+
